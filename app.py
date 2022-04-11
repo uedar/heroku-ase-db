@@ -27,6 +27,9 @@ def search(project_name: str):
 
     Contains input form for database query and a table result rows.
     """
+    db = connect("data/atoms.json")
+    print(projects)
+    add_project(db)
     if project_name == "favicon.ico":
         return "", 204, []  # 204: "No content"
     session = Session(project_name)
@@ -184,4 +187,4 @@ if __name__ == "__main__":
     db = connect("data/atoms.json")
     print(projects)
     add_project(db)
-    app.run()
+    app.run(debug=True)
