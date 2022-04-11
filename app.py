@@ -1,27 +1,3 @@
-"""WSGI Flask-app for browsing a database.
-
-::
-
-    +---------------------+
-    | layout.html         |
-    | +-----------------+ |    +--------------+
-    | | search.html     | |    | layout.html  |
-    | |     +           | |    | +---------+  |
-    | | table.html ----------->| |row.html |  |
-    | |                 | |    | +---------+  |
-    | +-----------------+ |    +--------------+
-    +---------------------+
-
-You can launch Flask's local webserver like this::
-
-    $ ase db abc.db -w
-
-or this::
-
-    $ python3 -m ase.db.app abc.db
-
-"""
-
 import io
 import sys
 from typing import Dict, Any, Set
@@ -205,4 +181,4 @@ def add_project(db: Database) -> None:
 if __name__ == "__main__":
     db = connect(sys.argv[1])
     add_project(db)
-    app.run(host="0.0.0.0", debug=True)
+    app.run()
