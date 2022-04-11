@@ -30,6 +30,7 @@ def search(project_name: str):
     if project_name == "favicon.ico":
         return "", 204, []  # 204: "No content"
     session = Session(project_name)
+    print(projects)
     project = projects[project_name]
     return render_template(
         project["search_template"],
@@ -176,9 +177,11 @@ def add_project(db: Database) -> None:
         "row_template": "row.html",
         "table_template": "table.html",
     }
+    print(projects)
 
 
 if __name__ == "__main__":
-    db = connect("atoms.json")
+    db = connect("data/atoms.json")
+    print(projects)
     add_project(db)
     app.run()
