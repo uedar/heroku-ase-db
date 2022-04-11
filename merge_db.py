@@ -8,12 +8,12 @@ paths = [
 ]
 
 # remove db
-if os.path.isfile("test.json") == True:
-    os.remove("test.json")
+if os.path.isfile("./data/main.json") == True:
+    os.remove("./data/main.json")
 
 
 print(paths)
-db_main = connect("test.json")
+db_main = connect("./data/main.json")
 for arg in paths:
     db_to_append = connect(arg)
     for row in db_to_append.select():
