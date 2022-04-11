@@ -1,4 +1,4 @@
-FROM python:3.7.5
+FROM python:3.7.12
 
 # install heroku cli
 RUN curl https://cli-assets.heroku.com/install.sh | sh
