@@ -1,0 +1,19 @@
+name: ci
+
+on: [pull_request]
+
+jobs:
+  db:
+    runs-on: ubuntu-latest
+    name: merge-db
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Install packeges
+        run: pip install -r requirements.txt
+      - name: Run Python
+        run: python merge_db.py
