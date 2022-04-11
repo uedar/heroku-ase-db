@@ -182,6 +182,6 @@ def add_project(db: Database) -> None:
 
 
 if __name__ == "__main__":
-    db = connect("data/atoms.json")
+    db = connect("data/main.json")
     add_project(db)
     app.run(debug=True)
